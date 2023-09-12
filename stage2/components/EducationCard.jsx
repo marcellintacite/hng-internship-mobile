@@ -2,17 +2,17 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
-export default function EducationCard({ data }) {
+export default function EducationCard({ item }) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <SimpleLineIcons name="graduation" size={24} color="black" />
       </View>
       <View style={styles.content}>
-        <Text style={styles.degree}>{data.item.degree}</Text>
-        <Text style={styles.school}>{data.item.school}</Text>
+        <Text style={styles.degree}>{item.degree}</Text>
+        <Text style={styles.school}>{item.school}</Text>
 
-        <Text style={styles.year}>{data.item.year}</Text>
+        <Text style={styles.year}>{item.year}</Text>
       </View>
     </View>
   );

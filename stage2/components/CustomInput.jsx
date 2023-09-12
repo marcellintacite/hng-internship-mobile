@@ -7,6 +7,8 @@ const CustomInput = ({
   icon,
   style,
   numberOfLines,
+  handleChange,
+  value,
   ...restProps
 }) => {
   return (
@@ -18,7 +20,9 @@ const CustomInput = ({
         multiline={true}
         numberOfLines={4}
         style={{ ...styles.input, ...style }}
+        onChangeText={(text) => handleChange(text)}
         {...restProps}
+        value={value}
       />
     </View>
   );

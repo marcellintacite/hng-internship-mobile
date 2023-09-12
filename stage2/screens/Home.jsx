@@ -4,6 +4,7 @@ import {
   Text,
   View,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import React from "react";
 import { useContext } from "react";
@@ -35,29 +36,29 @@ export default function Home({ navigation }) {
         <Text style={styles.aboutText}>About</Text>
         <Text style={styles.aboutTextDetail}>{data.personalInfo}</Text>
       </View>
-      <View style={styles.skills}>
-        <Text style={styles.aboutText}>Skills</Text>
-        <View style={styles.skillsContent}>
-          {data.skills.map((skill) => (
-            <Skill key={skill.id} name={skill} />
+      <ScrollView>
+        <View style={styles.skills}>
+          <Text style={styles.aboutText}>Skills</Text>
+          <View style={styles.skillsContent}>
+            {data.skills.map((skill) => (
+              <Skill key={skill.id} name={skill} />
+            ))}
+          </View>
+        </View>
+
+        <View style={styles.education}>
+          <Text style={styles.aboutText}>Education</Text>
+          {data.education.map((skill) => (
+            <EducationCard item={skill} />
           ))}
         </View>
-      </View>
-
-      <View style={styles.education}>
-        <Text style={styles.aboutText}>Education</Text>
-        <FlatList
-          data={data.education}
-          renderItem={(item) => <EducationCard data={item} />}
-          style={styles.educationContent}
-        />
-      </View>
+      </ScrollView>
 
       <TouchableOpacity
         onPress={() => navigation.navigate("Edit")}
         style={styles.edit}
       >
-        <Feather name="edit" size={28} color="#fff" />
+        <Feather name="edit" size={24} color="#fff" />
       </TouchableOpacity>
     </View>
   );
@@ -138,6 +139,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#f9f9f9",
     padding: 10,
     borderRadius: 5,
+    paddingBottom: 20,
+    marginBottom: 20,
   },
   educationContent: {
     paddingBottom: 20,
@@ -148,8 +151,8 @@ const styles = StyleSheet.create({
     bottom: 20,
     right: 20,
     backgroundColor: "#2978b5",
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
     borderRadius: 30,
     justifyContent: "center",
     alignItems: "center",
