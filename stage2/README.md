@@ -1,7 +1,7 @@
 # Real-time CV Generator with React useContext Hook
 
 This Expo project allows you to generate a dynamic CV with real-time data updates using the React useContext hook. This is a basic template to get you started.
-
+Here's the link : <a href="https://appetize.io/app/ogdbgygrbebkyjdcirtslsonla?device=pixel4&osVersion=11.0&scale=75">Visit the app </a>
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
